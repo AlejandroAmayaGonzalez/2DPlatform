@@ -82,4 +82,10 @@ public class EnemyMovement : MonoBehaviour {
 
         return hit.collider != null && hit.collider.gameObject != gameObject; // Ensure it's not hitting itself
     }
+
+    void OnTriggerEnter2D(Collider2D other){
+        if (other.CompareTag("Player")){ 
+            other.GetComponent<PlayerHealth>().TakeDamage(); 
+        }
+    }
 }

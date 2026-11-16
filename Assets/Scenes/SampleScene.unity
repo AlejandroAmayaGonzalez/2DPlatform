@@ -29476,11 +29476,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 725803358728981153, guid: 7af2aad59665a874ba4653d5b2d29ddb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -12.38
+      value: -12.48
       objectReference: {fileID: 0}
     - target: {fileID: 725803358728981153, guid: 7af2aad59665a874ba4653d5b2d29ddb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.64
+      value: 1.44
       objectReference: {fileID: 0}
     - target: {fileID: 725803358728981153, guid: 7af2aad59665a874ba4653d5b2d29ddb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -30270,9 +30270,10 @@ GameObject:
   - component: {fileID: 1616582376}
   - component: {fileID: 1616582377}
   - component: {fileID: 1616582378}
+  - component: {fileID: 1616582379}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30447,6 +30448,22 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.44998908, y: 0.110528976}
   m_EdgeRadius: 0
+--- !u!114 &1616582379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1616582372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a51544e26db7ebf42b212d718a2e3942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHealth: 3
+  currentHealth: 0
+  blinkColor: {r: 1, g: 0.4117647, b: 0.7058824, a: 1}
+  blinkDuration: 0.1
 --- !u!1 &1670176654
 GameObject:
   m_ObjectHideFlags: 0
@@ -30908,11 +30925,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 725803358728981153, guid: 7af2aad59665a874ba4653d5b2d29ddb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.55
+      value: -21.52
       objectReference: {fileID: 0}
     - target: {fileID: 725803358728981153, guid: 7af2aad59665a874ba4653d5b2d29ddb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.658
+      value: 1.43
       objectReference: {fileID: 0}
     - target: {fileID: 725803358728981153, guid: 7af2aad59665a874ba4653d5b2d29ddb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -30961,6 +30978,14 @@ PrefabInstance:
     - target: {fileID: 8960995540810918193, guid: 7af2aad59665a874ba4653d5b2d29ddb, type: 3}
       propertyPath: direction
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960995540810918193, guid: 7af2aad59665a874ba4653d5b2d29ddb, type: 3}
+      propertyPath: startDirection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8960995540810918193, guid: 7af2aad59665a874ba4653d5b2d29ddb, type: 3}
+      propertyPath: enemyCheckDistance
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
