@@ -2,29 +2,35 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerMovement : MonoBehaviour
-{
+public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private float jumpForce = 10f;
+    
 
     Rigidbody2D rb;
     Animator animator;
+    BoxCollider2D myFeetCollider;
+
 
     Vector2 moveInput;
+    float gravityScaleAtStart;
 
+    
     void Start(){
         rb = GetComponent<Rigidbody2D>();
-        animator = transform.GetChild(0).GetChild(PlayerPrefs.GetInt("SelectedCharacter", 0)).GetComponent<Animator>();
+        myFeetCollider = GetComponent<BoxCollider2D>();
+        int selectedCharacterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
+        animator = transform.GetChild(0).GetChild(selectedCharacterIndex).GetComponent<Animator>();
+        gravityScaleAtStart = rb.gravityScale;
     }
 
     void Update(){
         Run();
+        IsJumping();
+        ClimbLadder();
     }
 
-
-    void OnMove(InputValue value){
-        moveInput = value.Get<Vector2>();
-    }
+    void OnMove(InputValue value){ moveInput = value.Get<Vector2>(); }
 
     void OnJump(InputValue value){
         if (myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && value.isPressed){
@@ -38,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
         }else{
             animator.SetBool("isJumping", false);            
         }
-        
     }
 
 
@@ -66,19 +71,5 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = climbVelocity;
 
         animator.SetBool("isClimbing", moveInput.y != 0f);
-    }
-
-    private void OnJump(InputValue value){
-        if (!feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && value.isPressed){
-            rb.linearVelocity = new Vector2(0f, jumpForce);
-        }
-    }
-
-    private void IsJumping(){
-        if (!feetCollider.IsTouchingLayers(LayerMask.GetMask("Ground"))){
-            animator.SetBool("isJumping", true);
-        }else{
-            animator.SetBool("isJumping", false);
-        }
     }
 }
