@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c77478d3d6ae9734cbfacd4b5cbe1b07
+guid: aa5273019aad10b41998f49d5c9b311f
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -114,19 +114,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -146,12 +133,12 @@ TextureImporter:
       name: SPA_Enemy_Right_Yellow_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 4
-        width: 32
-        height: 32
+        x: 14
+        y: 6
+        width: 26
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -168,12 +155,12 @@ TextureImporter:
       name: SPA_Enemy_Right_Yellow_1
       rect:
         serializedVersion: 2
-        x: 49
-        y: 4
-        width: 32
-        height: 32
+        x: 52
+        y: 6
+        width: 26
+        height: 20
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -190,12 +177,12 @@ TextureImporter:
       name: SPA_Enemy_Right_Yellow_2
       rect:
         serializedVersion: 2
-        x: 87
-        y: 4
-        width: 32
-        height: 32
+        x: 90
+        y: 6
+        width: 26
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,12 +199,12 @@ TextureImporter:
       name: SPA_Enemy_Right_Yellow_3
       rect:
         serializedVersion: 2
-        x: 125
-        y: 4
-        width: 32
-        height: 32
+        x: 128
+        y: 8
+        width: 28
+        height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -234,12 +221,12 @@ TextureImporter:
       name: SPA_Enemy_Right_Yellow_4
       rect:
         serializedVersion: 2
-        x: 163
-        y: 4
-        width: 32
-        height: 32
+        x: 166
+        y: 12
+        width: 28
+        height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -256,12 +243,12 @@ TextureImporter:
       name: SPA_Enemy_Right_Yellow_5
       rect:
         serializedVersion: 2
-        x: 201
-        y: 4
-        width: 32
-        height: 32
+        x: 202
+        y: 6
+        width: 26
+        height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -278,7 +265,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bec6df7dfcdfd4b4988bafd95fe99e1c
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -286,9 +273,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":11.0,"y":4.0},"gridSpritePadding":{"x":6.0,"y":6.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
       SPA_Enemy_Right_Yellow_0: 617764662413310538
       SPA_Enemy_Right_Yellow_1: -1256514926983273861
