@@ -5,15 +5,20 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 10f;
+
+    [SerializeField] private GameObject arrowPrefab;
+    [SerializeField] private float shootCooldown = 0.5f;
     
 
     Rigidbody2D rb;
     Animator animator;
     BoxCollider2D myFeetCollider;
+    Transform arrowSpawnPoint;
 
 
     Vector2 moveInput;
     float gravityScaleAtStart;
+    float lasShootTime = -999f;
 
     
     void Start(){
@@ -22,6 +27,8 @@ public class PlayerMovement : MonoBehaviour {
         int selectedCharacterIndex = PlayerPrefs.GetInt("SelectedCharacter", 0);
         animator = transform.GetChild(0).GetChild(selectedCharacterIndex).GetComponent<Animator>();
         gravityScaleAtStart = rb.gravityScale;
+
+        arrowSpawnPoint = transform.GetChild(1).GetComponent<Transform>();
     }
 
     void Update(){
@@ -31,6 +38,20 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void OnMove(InputValue value){ moveInput = value.Get<Vector2>(); }
+
+    void OnAttack(InputValue value){
+        if (!value.isPressed) return;
+        if (animator.GetBool("isClimbing")) return; // Prevent shooting while climbing
+
+        animator.SetTrigger("Shoot");
+
+        ShootArrow();
+    }
+
+    public void ShootArrow(){
+        GameObject arrow = Instantiate(arrowPrefab, arrowSpawnPoint.position, Quaternion.identity);
+        arrow.GetComponent<ArrowProyectile>().SetDirection(Mathf.Sign(transform.localScale.x));
+    }
 
     void OnJump(InputValue value){
         if (myFeetCollider.IsTouchingLayers(LayerMask.GetMask("Ground")) && value.isPressed){
